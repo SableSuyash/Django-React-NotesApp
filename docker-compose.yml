@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   web:
-    build: .
+    image: suyash222/note-app:latest
     command: python manage.py runserver
     ports:
       - "8000:8000" 
