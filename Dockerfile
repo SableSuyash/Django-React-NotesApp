@@ -12,7 +12,7 @@ RUN python manage.py makemigrations
 RUN python manage.py migrate
 
 
-FROM alpine:latest
+FROM python:3.8-slim
 
 COPY --from=build /app /app
 
