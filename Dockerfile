@@ -14,6 +14,8 @@ RUN python manage.py migrate
 
 FROM python:3.8-slim
 
+WORKDIR /app
+
 COPY --from=build /app /app
 
 EXPOSE 8000
