@@ -6,17 +6,16 @@ COPY requirements.txt .
 RUN apt-get update
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . /app/
+COPY . .
 
 RUN python manage.py makemigrations
 RUN python manage.py migrate
 
+# FROM python:3.8-slim
 
-FROM python:3.8-slim
+# WORKDIR /app
 
-WORKDIR /app
-
-COPY --from=build /app /app
+# COPY --from=build /app /app
 
 EXPOSE 8000
 
